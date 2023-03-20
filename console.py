@@ -141,13 +141,13 @@ class HBNBCommand(cmd.Cmd):
 
         # Si aucun argument n'a été entré, affiche un message d'erreur
         if not args:
-            print("** Nom de classe manquant **")
+            print("** Missing class name **")
             return
 
         # Si le nom de la classe entré par l'utilisateur n'existe pas dans la liste des classes,
         # affiche un message d'erreur
         elif ListOfArgs[0] not in HBNBCommand.classes:
-            print("** La classe n'existe pas **")
+            print("** Class doesn't exist **")
             return
 
         # Si le nom de la classe est valide, instancie une nouvelle instance de la classe
