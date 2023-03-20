@@ -53,4 +53,5 @@ class FileStorage:
         """ Delete an object """
         if obj is None:
             return
-        del(obj)
+        key = f"{type(obj).__name__}.{obj.id}"
+        del(FileStorage.__objects[key])
