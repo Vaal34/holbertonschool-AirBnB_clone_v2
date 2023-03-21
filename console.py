@@ -239,16 +239,17 @@ class HBNBCommand(cmd.Cmd):
         """ Shows all objects, or all objects of a class"""
         print_list = []
 
+        obj_dict = storage.all()
         if args:
             args = args.split(' ')[0]  # remove possible trailing args
             if args not in HBNBCommand.classes:
                 print("** class doesn't exist **")
                 return
-            for k, v in storage._FileStorage__objects.items():
+            for k, v in obj_dict.items():
                 if k.split('.')[0] == args:
                     print_list.append(str(v))
         else:
-            for k, v in storage._FileStorage__objects.items():
+            for k, v in obj_dict.items():
                 print_list.append(str(v))
 
         print(print_list)
@@ -258,10 +259,12 @@ class HBNBCommand(cmd.Cmd):
         print("Shows all objects, or all of a class")
         print("[Usage]: all <className>\n")
 
+
     def do_count(self, args):
         """Count current number of class instances"""
         count = 0
-        for k, v in storage._FileStorage__objects.items():
+        obj_dict = storage.all()
+        for k, v in obj_dict.items():
             if args == k.split('.')[0]:
                 count += 1
         print(count)
@@ -298,7 +301,7 @@ class HBNBCommand(cmd.Cmd):
 
         # determine if key is present
         if key not in storage.all():
-            print("** no instance found **")
+            print("** no instances found **")
             return
 
         # first determine if kwargs or args
