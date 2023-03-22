@@ -259,7 +259,6 @@ class HBNBCommand(cmd.Cmd):
         print("Shows all objects, or all of a class")
         print("[Usage]: all <className>\n")
 
-
     def do_count(self, args):
         """Count current number of class instances"""
         count = 0

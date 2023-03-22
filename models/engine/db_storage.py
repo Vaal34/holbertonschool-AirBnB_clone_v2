@@ -4,6 +4,7 @@ import os
 from sqlalchemy        import create_engine
 from sqlalchemy.orm    import sessionmaker, relationship, scoped_session
 from models.base_model import Base, BaseModel
+from models.base_model import BaseModel
 from models.user       import User
 from models.state      import State
 from models.review     import Review
