@@ -12,12 +12,5 @@ class State(BaseModel, Base):
     """ State class """
     from models.city import City
 
-    if os.getenv("HBNB_TYPE_STORAGE") == "db":
-        __tablename__ = "states"
-        name = Column(String(128), nullable=False)
-        cities = relationship("City", backref="state")
-        @property
-        def cities(self):
-            return self.City.state_id
-    else:
-        name = ""
+
+    name = ""
