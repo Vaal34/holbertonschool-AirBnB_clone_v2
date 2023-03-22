@@ -301,7 +301,7 @@ class HBNBCommand(cmd.Cmd):
 
         # determine if key is present
         if key not in storage.all():
-            print("** no instances found **")
+            print("** no instance found **")
             return
 
         # first determine if kwargs or args
