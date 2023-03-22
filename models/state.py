@@ -12,5 +12,11 @@ class State(BaseModel, Base):
     """ State class """
     from models.city import City
 
-
-    name = ""
+    __tablename__ = "states"
+    name = Column(String(128), nullable=False)
+    cities = relationship("City", backref="state")
+    
+    @property
+    def cities(self):
+        return self.City.state_id
+    
