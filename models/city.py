@@ -5,7 +5,7 @@ from models.base_model import Base
 from sqlalchemy import Column, DateTime, String, ForeignKey
 from sqlalchemy.ext.declarative import declarative_base
 
-class City(BaseModel, Base):
+class City(BaseModel):
     """ The city class, contains state ID and name """
     state_id = ""
     name = ""
