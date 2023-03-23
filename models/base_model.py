@@ -24,6 +24,7 @@ class BaseModel:
             for key, value in kwargs.items():
                 if key != "created_at" or key != "updated_at" or key != "__class__":
                     setattr(self, key, value)
+        storage.new(self)
 
     def __str__(self):
         """Returns a string representation of the instance"""
